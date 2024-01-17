@@ -1,5 +1,7 @@
-const http = require('node:http');
-const fs = require("fs");
+// const http = require('node:http');
+// const fs = require("fs");
+
+import http from http
 
 
 const hostname = '127.0.0.1';
