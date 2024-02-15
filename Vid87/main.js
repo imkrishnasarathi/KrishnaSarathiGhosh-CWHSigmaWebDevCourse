@@ -5,6 +5,9 @@ console.log("Starting...")
 
 fs.writeFile("harry2.txt", "Harry is a good boy", () => {
     console.log("done")
+    fs.readFile("harry2.txt", (error, data)=>{
+
+    })
 })
 
 console.log("Ending...")
