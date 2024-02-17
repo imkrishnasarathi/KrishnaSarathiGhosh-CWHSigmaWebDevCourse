@@ -5,9 +5,13 @@ console.log("Starting...")
 
 fs.writeFile("harry2.txt", "Harry is a good boy", () => {
     console.log("done")
-    fs.readFile("harry2.txt", (error, data)=>{
-
+    fs.readFile("harry2.txt", "utf-8", (error, data)=>{
+        console.log(error, data)
     })
+})
+
+fs.appendFile("harry.txt", "harryrobo", (e,d)=>{
+    console.log(d)
 })
 
 console.log("Ending...")
