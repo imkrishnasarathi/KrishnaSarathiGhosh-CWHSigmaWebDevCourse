@@ -14,6 +14,11 @@ app.post('/', (req, res) => {
     res.send('Got a POST request')
 })
 
+app.put('/', (req, res) => {
+    console.log("hey it's a put request")
+    res.send('Got a PUT request at /')
+})
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
