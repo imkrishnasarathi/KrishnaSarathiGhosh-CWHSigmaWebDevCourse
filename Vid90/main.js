@@ -6,6 +6,8 @@ const fs = require('fs')
 // app.use(express.static('public'))
 
 app.use((req, res, next) => {
+    console.log(req.headers)
+    req.harry = "I am harry bhai";
     fs.appendFileSync("logs.txt", `${Date.now()} is a ${req.method}\n`)
     // res.send("Middleware 1")
     next()
