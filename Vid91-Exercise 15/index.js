@@ -1,11 +1,26 @@
-import * as fs from 'fs';
-import * as path from 'path';
+const fs = require('fs');
+const path = require('path');
 
 let files = [];
-fs.readdir(__dirname, (err, files) => {
-    files.forEach(file => {
-        files.push(file);
-    })
-});
+fs.readdirSync(__dirname).forEach(file => {
+    if (path.extname(file) === ".js" || path.extname(file) === ".json") {
+        return;
+    }
+    files.push(file);
+})
 
-console.log(files)
+files.forEach(file => {
+    const extension = path.extname(file).substring(1);
+    const currentPath = path.join(__dirname, file);
+    const destinationPath = path.join(__dirname, extension, file);
+
+    if (!fs.existsSync(extension)) {
+        fs.mkdirSync(extension);
+    }
+    fs.rename(currentPath, destinationPath, (err) => {
+        if (err) {
+            throw err;
+        }
+    })
+
+})
