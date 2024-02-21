@@ -1,7 +1,11 @@
 const express = require('express')
 const app = express()
 const port = 3000
+const blog = require('./routes/blogs')
 const fs = require('fs')
+
+
+app.use('/blog', blog)
 
 // app.use(express.static('public'))
 
@@ -15,6 +19,7 @@ app.use((req, res, next) => {
 
 app.use((req, res, next) => {
     console.log('m2')
+    req.harry = "I am krishna bhai";
     next()
 })
 
@@ -23,7 +28,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/about', (req, res) => {
-    res.send('Hello about!')
+    res.send('Hello about!' + req.harry)
 })
 
 app.get('/contact', (req, res) => {
