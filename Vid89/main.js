@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 
 app.get("/index", (req, res) => {
     console.log("Hey it's index")
-    res.sendFile('templates/index.html', {root: __dirname})
+    res.sendFile('views/index.ejs', {root: __dirname})
 })
 
 app.get("/api", (req, res) => {
