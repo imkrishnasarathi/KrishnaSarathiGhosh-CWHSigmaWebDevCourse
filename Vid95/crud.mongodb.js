@@ -73,4 +73,5 @@ db.courses.insertMany([
 ])
 
 let a = db.courses.find({price: 0});
-console.log(a)
+
+console.log(a.count())
