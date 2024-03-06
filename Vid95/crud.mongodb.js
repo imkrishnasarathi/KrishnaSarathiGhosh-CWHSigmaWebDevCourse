@@ -9,7 +9,7 @@ db.courses.insertOne({
     projects: 45
 })
 
-db.courses.inserMany([
+db.courses.insertMany([
     {
         "name": "Harry's Web Dev Free Course",
         "price": 0,
