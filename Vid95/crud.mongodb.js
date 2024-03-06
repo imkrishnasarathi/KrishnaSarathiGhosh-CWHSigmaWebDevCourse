@@ -1,5 +1,8 @@
+// CRUD OPERATIONS
 use("CrudDb");
 
+// CREATE
+/*
 db.createCollection("courses");
 
 db.courses.insertOne({
@@ -71,7 +74,26 @@ db.courses.insertMany([
         "projects": 55
     }
 ])
+*/
 
+// READ
+/*
 let a = db.courses.find({price: 0});
 
-console.log(a.count())
+console.log(a.toArray())
+
+let b = db.courses.findOne({price: 0});
+
+console.log(b)
+*/
+
+// UPDATE
+// db.courses.updateOne({price: 0}, {$set: {price: 100}})
+
+// db.courses.updateMany({price: 0}, {$set: {price: 1000}})
+
+// DELETE
+
+// db.courses.deleteOne({price: 100})
+
+// db.courses.deleteMany({price: 1000})
