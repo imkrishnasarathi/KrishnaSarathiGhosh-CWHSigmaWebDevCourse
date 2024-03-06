@@ -71,3 +71,6 @@ db.courses.insertMany([
         "projects": 55
     }
 ])
+
+let a = db.courses.find({ price: 0 });
+console.log(a)
